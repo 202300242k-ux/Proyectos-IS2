@@ -13,34 +13,34 @@
     const emailsusers = listusers.map( u => u.email );
 
     // Variables booleanas de un video juego
-    const jump = false;
-    const run = true;
-    const noTieneItems = true;
-    const loading = false;
+    const canjump = false;
+    const canrun = true;
+    const hasItems = true;
+    const isLoading = false;
 
     // Otros ejercicios
     // tiempo inicial
-    const tiempoinicial = new Date().getTime();
+    const starttime = new Date().getTime();
     //....
     // 3 doritos después
     //...
     // Tiempo al final
-    const tiempofinal = new Date().getTime() - tiempoinicial;
+    const endtime = new Date().getTime() - starttime;
 
 
     // Funciones
     // Obtiene los libros
-    function book() {
+    function getBooks() {
         throw new Error('Function not implemented.');
     }
 
     // obtiene libros desde un URL
-    function BooksUrl( u: string) {
+    function getBooksFromUrl( url: string) {
         throw new Error('Function not implemented.');
     }
     
     // obtiene el área de un cuadrado basado en sus lados
-    function areaCuadrado( s: number ) {
+    function getsquarearea( side: number ) {
         throw new Error('Function not implemented.');
     }
 

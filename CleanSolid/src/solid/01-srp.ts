@@ -1,40 +1,45 @@
 
 (() => {
 
-    interface Product { 
+    interface Product {
         id: number;
         name: string;
     }
 
+    // Responsabilidad: gestionar productos
     class ProductBloc {
 
         loadProduct(id: number) {
-            // Obtener información del producto
             console.log('Producto: ', { id, name: 'OLED TV' });
         }
 
         saveProduct(product: Product) {
-            // Guardar producto en la base de datos
             console.log('Guardando en base de datos', product);
-        }
-
-        notifyClients() {
-            // Notificar a los clientes
-            console.log('Enviando correo a los clientes');
         }
     }
 
+    // Responsabilidad: gestionar el carrito
     class CartBlock {
 
         onAddToCart(productId: number) {
-            // Agregar producto al carrito
             console.log('Agregando al carrito ', productId);
         }
     }
 
+    // Responsabilidad: gestionar notificaciones
+    class NotificationBlock {
+
+        notifyClients() {
+            console.log('Enviando correo a los clientes');
+        }
+    }
+
+    // Crear objetos
     const productBloc = new ProductBloc();
     const cartBloc = new CartBlock();
+    const notificationBloc = new NotificationBlock();
 
+    // Ejecutar métodos
     productBloc.loadProduct(10);
 
     productBloc.saveProduct({
@@ -42,9 +47,8 @@
         name: 'OLED TV'
     });
 
-    productBloc.notifyClients();
-
-    // El método pertenece a CartBlock
     cartBloc.onAddToCart(10);
+
+    notificationBloc.notifyClients();
 
 })();
